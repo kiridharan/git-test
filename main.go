@@ -32,7 +32,7 @@ func index(w http.ResponseWriter, r *http.Request) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Todo List</title>
+    <title>Todo List Test</title>
 </head>
 <body>
     <h1>Todo List</h1>
