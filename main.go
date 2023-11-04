@@ -1,15 +1,23 @@
 package main
 
 import (
-	"fmt"
-	"net/http"
+	"github.com/gin-gonic/gin"
 )
 
-func helloWorldHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintln(w, "Hello, World!")
-}
-
 func main() {
-	http.HandleFunc("/", helloWorldHandler)
-	http.ListenAndServe(":8080", nil)
+
+	// Set /api/v1 as the base route
+	r := gin.Default()
+
+	// Set the route group
+
+	r.GET("/", func(c *gin.Context) {
+		c.JSON(200, gin.H{
+			"message": "Welcome to the API",
+		})
+	})
+
+	// Call the scheduler.PulData() function here
+
+	r.Run(":" + "3000")
 }
